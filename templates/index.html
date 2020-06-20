@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<title>Covid-19 India</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+p{text-indent: 50px;font-size: 16px}
+</style>
+<body class="w3-light-grey">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+  <span class="w3-bar-item w3-left">Covid-19 India</span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar">
+  <div class="w3-container">
+    <h5>Dashboard</h5>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+    <a href="{{ url_for('index')}}" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Overview</a>
+    <a href="{{ url_for('/covid_India/')}}" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Dashboard</a>
+    <a href="{{ url_for('report')}}" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Report</a>
+  </div>
+  <div>
+    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn3.iconfinder.com%2Fdata%2Ficons%2Fcoronavirus-12%2F64%2Fmask-wearing-avatar-man-covid19-coronavirus-air_pollution-512.png&f=1&nofb=1" width="100%" style="position: absolute;left: 0;bottom: 0">
+  </div>  
+</nav>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+    <h5><b><i class="fa fa-dashboard"></i> Introduction</b></h5>
+  </header>
+  <div class="w3-container">
+    <div class="w3-col m4">
+      <br>
+      <img src="https://raw.github.com/siddfulzele/Covid_19/master/timeline.gif" width="100%">
+      <br>
+      <h6 style="text-align: center;font-family: 'Raleway', sans-serif">Timeline of the pandemic spread across India <br> (since 30 January 2020 and till 3 April 2020)</h6>
+    </div>
+    <div class="w3-col m8" >
+      <p>A virus sweeping the globe made the whole world closed ther borders and first time in human history Government locked their citizens in their home .
+A epidemic of pandemic proportion had emerged .
+When a virus jump to human from animals it is called ZOONOTIC virus. The virus that caused the outbreak is known as SARS‑Covid‑19, a newly discovered virus closely related to bat coronaviruses
+From a family of SARS virus, a new virus was born SARS-COVID 19. 
+In COVID 19- CO Stands for corona; V stands Virus; D stands for disease;19 - for year In which it was first detected. 
+First found in Wuhan city of china, spread all over the world and was declared pandemic by WHO on 30 January 2020.</p>
+    <p>PRIME MINISTER NARENDRA MODI on 24 Mrach ordered a nationwide lockdown for 21 days, affecting the entire 1.3 billion population of India. On 14 April, the PM extended the nationwide lockdown till 3 May which was followed by two-week extensions starting 3 and 17 May with substantial relaxations. Beginning 1 June the Government has started unlocking the country (barring containment zones) in three unlock phases.</p>
+    <p>The United Nations (UN) and the World Health Organization (WHO) have praised India's response to the pandemic as 'Comprehensive and robust,' terming the Lockdown restrictions as aggressive but vital for containing the spread and building necessary healthcare infrastructure. The Oxford COVID-19 Government Response Tracker (OxCGRT) noted the government's swift and stringent actions, emergency policy making, emergency investment in healthcare, fiscal stimulus, investment in vaccine and drug R&D. It gave India a score of 100 for its strict response. Michael Ryan, chief executive director of the WHO's health emergencies programme noted that India had tremendous capacity to deal with the outbreak owing to its vast experience in eradicating smallpox and polio. Other commentators have also raised concerns about the economic fallout arising as a result of the pandemic and preventive restrictions.</p>
+    </div>
+      
+  </div>
+
+  <div class="w3-row w3-container">
+    <div class="w3-col m8">
+      <h4>In this project we dived deep into <b>‘What does data say about Covid-19 situation in India?’</b>. And with available data we came up with some observations and conclusions.</h4>
+      <p><b>This analysis mainly focuses on:</b></p>
+      <ul>
+        <li><b> What is the current COVID-19 situation in India? </b></li>
+        <li><b> State-wise comparison.</b></li>
+        <li><b> What could be the reasons behind cases clusters found in India.</b></li>
+        <li><b> Is lockdown in India successful or not?</b></li>
+      </ul>
+      <h3>You Can see the Analysis Details in a <a href="{{ url_for('report')}}">Report</a></h3>
+      <h3>Current situation and Visualization on <a href="{{ url_for('/covid_India/')}}">Dashborad</a></h3>
+      <h4>If you have some suggestions or queries! you can write us on facebook which is linked in footer with team members.</h4>
+    </div>
+    <div class="w3-col m4">
+      <!-- <img src="https://raw.github.com/siddfulzele/Covid_19/master/covid_1.png" width="100%"> -->
+      <img src="https://raw.github.com/siddfulzele/Covid_19/master/fear.png" width="100%">
+    </div>
+  </div>
+
+  <!-- Footer -->
+  
+    <div class="w3-container w3-dark-grey w3-padding-32">
+    <div class="w3-row">
+      <div class="w3-container w3-third">
+        <h5 class="w3-bottombar w3-border-orange">Source</h5>
+        <p>https://www.api.covid19india.org</p>
+        <p>https://www.wikipedia.org/</p>
+        <p>https://twitter.com/</p>
+      </div>
+      <div class="w3-container w3-third">
+        <h5 class="w3-bottombar w3-border-red">Take Precautions & Stay Safe</h5>
+        <p>Wash your hands often</p>
+        <p>Avoid close contact</p>
+        <p>Cover coughs and sneezes</p>
+        <p>Clean and disinfect</p>
+        <p>Monitor Your Health</p>
+      </div>
+      <div class="w3-container w3-third">
+        <h5 class="w3-bottombar w3-border-green">Analysis Team</h5>
+        <p><a href="https://www.facebook.com/fulzelesidd" target="_blank">Siddhant Fulzele</a></p>
+        <p><a href="https://www.facebook.com/shubham.rajput.33633" target="_blank">Shubham Rajput</a></p>
+        <p><a href="https://www.facebook.com/tejas.akadkar" target="_blank">Tejas Akadkar</a></p>
+        <p><a href="https://www.facebook.com/jazz.christino" target="_blank">Aakash Kundu</a></p>
+        <p><a href="https://www.facebook.com/akshay.kale.1800" target="_blank">Akshay Kale</a></p>
+      </div>
+    </div>
+
+
+  <!-- End page content -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>
